@@ -1,33 +1,81 @@
 name: flutter_demo
-description: Flutter演示项目，包含各种常用功能的示例代码
+description: 一个完整的Flutter演示项目，包含各种常用功能的示例代码和详细注释，适合Flutter初学者学习和参考。支持Web、Android、iOS和macOS多平台开发。
 
-publish_to: 'none'
+# 项目信息
+publish_to: 'none' # 不发布到pub.dev
 
 version: 1.0.0+1
+
+# 项目主页和仓库信息
+homepage: https://github.com/yourusername/flutterdemo
+repository: https://github.com/yourusername/flutterdemo
+issue_tracker: https://github.com/yourusername/flutterdemo/issues
+
+# 项目文档
+documentation: https://github.com/yourusername/flutterdemo#readme
+
+# 项目关键词
+topics:
+  - flutter
+  - dart
+  - mobile
+  - web
+  - desktop
+  - demo
+  - tutorial
+  - beginner
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
+  # Flutter SDK
   flutter:
     sdk: flutter
+  
+  # UI图标库
   cupertino_icons: ^1.0.2
+  
+  # 网络请求库
   http: ^1.1.0
+  
+  # 本地存储库
   shared_preferences: ^2.2.2
+  
+  # 状态管理库
   provider: ^6.1.1
+  
+  # 图片选择库
   image_picker: ^1.0.4
+  
+  # 相机功能库
   camera: ^0.10.5+5
+  
+  # 定位功能库
   geolocator: ^10.1.0
+  
+  # 权限管理库
   permission_handler: ^11.0.1
 
 dev_dependencies:
+  # Flutter测试框架
   flutter_test:
     sdk: flutter
+  
+  # Flutter代码规范检查
   flutter_lints: ^3.0.0
 
 flutter:
+  # 使用Material Design
   uses-material-design: true
   
+  # 资源文件配置
   assets:
-    - assets/images/
-    - assets/icons/
+    - assets/images/  # 图片资源
+    - assets/icons/   # 图标资源
+  
+  # 字体配置（可选）
+  # fonts:
+  #   - family: CustomFont
+  #     fonts:
+  #       - asset: assets/fonts/CustomFont-Regular.ttf

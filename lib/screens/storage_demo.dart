@@ -1,28 +1,76 @@
+// 导入Flutter Material Design组件库
 import 'package:flutter/material.dart';
+// 导入SharedPreferences本地存储库
 import 'package:shared_preferences/shared_preferences.dart';
 
+/**
+ * StorageDemo类 - 本地存储演示页面
+ *
+ * 这个页面演示了Flutter中使用SharedPreferences进行本地数据存储的方法
+ * SharedPreferences是Flutter中最常用的轻量级本地存储解决方案
+ *
+ * 主要功能：
+ * - 文本数据存储和读取
+ * - 数值数据存储和读取
+ * - 布尔值数据存储和读取
+ * - 数据的清除和重置
+ * - 异步操作处理
+ */
 class StorageDemo extends StatefulWidget {
+  // 构造函数
   const StorageDemo({super.key});
 
+  /**
+   * createState方法 - 创建状态对象
+   * 
+   * 返回_StorageDemoState实例来管理页面的状态
+   */
   @override
   State<StorageDemo> createState() => _StorageDemoState();
 }
 
+/**
+ * _StorageDemoState类 - 本地存储演示页面的状态管理类
+ *
+ * 这个类管理页面的状态，包括：
+ * - 文本输入控制
+ * - 存储的数据状态
+ * - 本地存储操作
+ */
 class _StorageDemoState extends State<StorageDemo> {
+  // 文本输入控制器，用于管理文本输入框
   final TextEditingController _textController = TextEditingController();
+  
+  // 存储的文本数据
   String _storedText = '';
+  
+  // 计数器值
   int _counter = 0;
+  
+  // 暗黑模式开关状态
   bool _isDarkMode = false;
 
+  /**
+   * initState方法 - 初始化状态
+   * 
+   * 在Widget首次插入到Widget树时调用
+   * 这里加载本地存储的数据
+   */
   @override
   void initState() {
     super.initState();
-    _loadData();
+    _loadData(); // 加载本地存储的数据
   }
 
+  /**
+   * dispose方法 - 清理资源
+   * 
+   * 在Widget从Widget树中移除时调用
+   * 这里释放TextEditingController资源
+   */
   @override
   void dispose() {
-    _textController.dispose();
+    _textController.dispose(); // 释放文本控制器资源
     super.dispose();
   }
 
